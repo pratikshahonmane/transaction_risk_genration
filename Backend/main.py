@@ -1,11 +1,10 @@
 """
-Fraud Detection API
+VALLI API
 FastAPI production service with real ML model inference
 """
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, validator
-from fastapi.middleware.cors import CORSMiddleware
 import numpy as np
 import joblib
 import os
@@ -31,20 +30,10 @@ model, FEATURES, label_encoder = load_artifacts()
 
 # ── App ────────────────────────────────────────────────────────────────────────
 app = FastAPI(
-    title="Fraud Detection API",
+    title="VALLI API",
     description="Real-time financial transaction fraud detection using ML",
     version="1.0.0"
 )
-
-# ✅ CORS ADDED HERE
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # allow React frontend (dev)
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
 
 # ── Schemas ────────────────────────────────────────────────────────────────────
 class TransactionRequest(BaseModel):
