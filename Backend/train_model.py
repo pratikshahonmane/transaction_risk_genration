@@ -1,13 +1,8 @@
-"""
-Fraud Detection Model Training Script
-Uses csv + numpy (no pandas dependency)
-Dataset: PaySim synthetic financial transactions
-"""
-
 import csv
 import numpy as np
 import joblib
 import os
+import shap # New dependency for XAI
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import (
@@ -132,6 +127,44 @@ def train(X, y):
     print("\nConfusion Matrix (rows=actual, cols=predicted):")
     print(confusion_matrix(y_test, y_pred))
 
+    # --- EXPLAINABLE AI SECTION ---
+    print("\n" + "="*30)
+    print("EXPLAINABLE AI (SHAP) ANALYSIS")
+    print("="*30)
+    
+    # Initialize SHAP Explainer
+    explainer = shap.TreeExplainer(model)
+    
+    # 1. Global Importance
+    importances = model.feature_importances_
+    sorted_idx = np.argsort(importances)[::-1]
+    print("\nTop 5 Most Important Features Globally:")
+    for i in range(5):
+        print(f"{i+1}. {FEATURES[sorted_idx[i]]}: {importances[sorted_idx[i]]:.4f}")
+
+    # 2. Local Explanation for a specific Fraud case
+    fraud_samples = np.where(y_test == 1)[0]
+    if len(fraud_samples) > 0:
+        idx = fraud_samples[0]
+        sample = X_test[idx:idx+1]
+        
+        # Calculate SHAP values (index 1 is the 'Fraud' class)
+        shap_values = explainer.shap_values(sample)
+        
+        print(f"\nExplaining Fraud Case at Index {idx}:")
+        print(f"Transaction Amount: ${sample[0][2]:,.2f}")
+        
+        # Match feature names to their impact on this specific prediction
+        feature_impacts = list(zip(FEATURES, shap_values[1][0]))
+        # Sort by absolute impact
+        feature_impacts.sort(key=lambda x: abs(x[1]), reverse=True)
+        
+        print("Top 3 reasons model flagged this as Fraud:")
+        for i in range(3):
+            name, val = feature_impacts[i]
+            direction = "Increased risk" if val > 0 else "Decreased risk"
+            print(f"- {name}: {direction} (impact score: {val:.4f})")
+    
     return model
 
 
@@ -150,3 +183,4 @@ if __name__ == "__main__":
     model = train(X, y)
     save_artifacts(model, le)
     print("Done.")
+    
