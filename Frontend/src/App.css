@@ -1,0 +1,95 @@
+:root {
+  --bg-dark: #0b132b;
+  --card-bg: #121c3b;
+  --panel-border: #1c2a54;
+  --accent-orange: #ff7a18;
+  --accent-green: #00ff88;
+  --accent-red: #ff4d4d;
+  --text-muted: #a0a8c3;
+}
+
+body {
+  background: var(--bg-dark);
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 25px;
+  border: 1px solid var(--panel-border);
+  height: 100%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Neon Inputs */
+.cyber-input {
+  background: #1a2447 !important;
+  border: 1px solid #233060 !important;
+  color: white !important;
+  padding: 10px;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.cyber-input:focus {
+  outline: none;
+  border-color: var(--accent-orange) !important;
+  box-shadow: 0 0 12px rgba(255, 122, 24, 0.4) !important;
+}
+
+/* Pipeline Step Animation */
+.pipeline-step {
+  background: #1a2447;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  border: 1px solid var(--panel-border);
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  color: var(--text-muted);
+}
+
+.step-active {
+  border-color: var(--accent-orange);
+  color: white;
+  box-shadow: 0 0 15px rgba(255, 122, 24, 0.2);
+  transform: translateX(10px);
+}
+
+/* Risk Circle */
+.risk-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 12px solid #233060;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto;
+  transition: border-color 1s ease;
+}
+
+.risk-value {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+/* Progress Bars */
+.progress-container {
+  height: 8px;
+  background: #233060;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--accent-orange);
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
