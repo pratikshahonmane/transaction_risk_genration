@@ -312,11 +312,6 @@ npm test -- --watch
 
 This project is proprietary software. All rights reserved.
 
-## 📞 Support
-
-- **Documentation**: [docs.valliguard.ai](https://docs.valliguard.ai)
-- **Issues**: [GitHub Issues](https://github.com/pratikshahonmane/valliGuard_AI/issues)
-- **Email**: support@valliguard.ai
 
 ## 🙏 Acknowledgments
 
