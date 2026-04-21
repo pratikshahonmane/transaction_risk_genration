@@ -1,0 +1,16 @@
+.risk-analyzer-header {
+  margin-bottom: 30px;
+}
+
+.risk-analyzer-title {
+  display: inline-flex;
+  align-items: center;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.risk-analyzer-subtitle {
+  font-size: 0.9rem;
+  color: #ff7a18;
+  margin-left: 15px;
+}

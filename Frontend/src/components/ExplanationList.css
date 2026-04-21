@@ -1,0 +1,53 @@
+.explanation-list {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.explanation-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #e5e7eb;
+  margin-bottom: 15px;
+}
+
+.explanation-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  background: linear-gradient(145deg, #0f1b3d, #0c1633);
+  border: 1px solid #1c2a54;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.explanation-icon {
+  min-width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #ff7a18;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #121212;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.explanation-text {
+  color: #d1d5db;
+  font-size: 0.9rem;
+}
+
+.ai-reason-title {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: #ff7a18;
+  font-weight: bold;
+}
+
+.explanation-item.reason-item {
+  padding: 12px;
+  background: #0c1633;
+}

@@ -1,0 +1,112 @@
+.result-panel {
+  text-align: center;
+  min-height: 500px;
+}
+
+.risk-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 12px solid #233060;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: border-color 1s ease;
+}
+
+.risk-value {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.risk-label {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #a0a8c3;
+}
+
+.prediction-chip {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #121212;
+  text-transform: uppercase;
+}
+
+.risk-level {
+  margin: 5px 0;
+  letter-spacing: 1px;
+}
+
+.confidence-panel {
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #0f1b3d, #0c1633);
+  border: 1px solid #1c2a54;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.confidence-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ff7a18;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.progress-container {
+  width: 100%;
+  height: 12px;
+  border-radius: 10px;
+  background: #0a1128;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #00ff88, #00c46a);
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.6);
+  transition: width 0.5s ease-in-out;
+}
+
+.result-divider {
+  border: none;
+  border-top: 1px solid #1c2a54;
+  margin: 20px 0;
+}
+
+.empty-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #a0a8c3;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.recommendation-box {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px dashed;
+  font-size: 0.8rem;
+  color: #fff;
+}

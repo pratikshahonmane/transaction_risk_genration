@@ -1,0 +1,88 @@
+.panel-heading {
+  border-bottom: 1px solid #1c2a54;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.pipeline-panel {
+  margin-top: 20px;
+  position: relative;
+}
+
+.pipeline-row {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.pipeline-connector {
+  position: absolute;
+  left: 22px;
+  top: 55px;
+  width: 1.5px;
+  height: 25px;
+  background: #2a335a;
+  transition: background 0.3s ease;
+}
+
+.pipeline-connector.active {
+  background: #ff7a18;
+}
+
+.pipeline-step {
+  display: flex;
+  align-items: center;
+  background: #1a1f2e;
+  border: 1px solid #2a335a;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+.pipeline-step.step-active {
+  background: #1f2a4d;
+  border-color: #ff9a44;
+  box-shadow: 0 0 10px rgba(255, 122, 24, 0.5);
+}
+
+.pipeline-step-icon {
+  width: 45px;
+  height: 45px;
+  background: #233060;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: white;
+}
+
+.pipeline-step-content {
+  margin-left: 15px;
+  flex: 1;
+}
+
+.pipeline-step-title {
+  color: white;
+  font-weight: 600;
+}
+
+.pipeline-step-desc {
+  color: #a0a8c3;
+  font-size: 0.8rem;
+}
+
+.pipeline-status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #444;
+}
+
+.pipeline-status-indicator.active {
+  background: #ff9a44;
+}
+
+.pipeline-status-indicator.complete {
+  background: #00ff88;
+}

@@ -1,0 +1,58 @@
+.panel-heading {
+  border-bottom: 1px solid #1c2a54;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.parameter-form {
+  margin-top: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.form-row.single {
+  flex-direction: column;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.wide {
+  flex: 2;
+}
+
+.form-group label {
+  color: #a0a8c3;
+  font-size: 0.8rem;
+}
+
+.btn-analyze {
+  width: 100%;
+  margin-top: 20px;
+  background: linear-gradient(90deg, #ff7a18, #ff9a44);
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.btn-analyze:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+.btn-analyze:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+  background: #444;
+}

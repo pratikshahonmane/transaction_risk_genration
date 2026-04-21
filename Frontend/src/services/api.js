@@ -1,7 +1,14 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://127.0.0.1:8000",
+  baseURL: "http://localhost:8000",
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
 
-export const predictFraud = (data) => API.post("/predict", data);
+export const predictRisk = async (payload) => {
+  const response = await API.post("/predict", payload);
+  return response.data;
+};
+
