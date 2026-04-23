@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 :root {
   --bg-dark: #0b132b;
   --card-bg: #121c3b;
@@ -110,8 +110,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
-=======
-/* App.css */
+
 .container {
   max-width: 900px;
   margin: 40px auto;
@@ -220,4 +219,3 @@ body {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
->>>>>>> d58eaaed3b9d5c79945b14ab042ed3955b121e25

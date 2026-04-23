@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 :root {
   --primary: #2563eb;
   --success: #10b981;
@@ -68,7 +68,7 @@ body {
   border-left: 6px solid var(--success);
   background: linear-gradient(to right, rgba(16, 185, 129, 0.05), transparent);
 }
-=======
+
 .container {
   max-width: 900px;
   margin: 50px auto;
@@ -131,4 +131,3 @@ body {
 
 .result-fraud { background: #fff5f5; color: #e03131; border: 1px solid #ffa8a8; }
 .result-legit { background: #f4fce3; color: #2f9e44; border: 1px solid #b2f2bb; }
->>>>>>> d58eaaed3b9d5c79945b14ab042ed3955b121e25

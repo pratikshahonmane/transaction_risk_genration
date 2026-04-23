@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import ParameterForm from '../components/ParameterForm';
 import PipelinePanel from '../components/PipelinePanel';
+import { predictRisk } from '../services/api';
 import RiskResultPanel from '../components/RiskResultPanel';
 import '../App.css';
 import './RiskAnalyzer.css';
@@ -57,11 +58,7 @@ const RiskAnalyzer = () => {
         newbalanceDest: formData.newbalanceDest === '' ? 0 : Number(formData.newbalanceDest)
       };
 
-      const response = await axios.post('http://localhost:8000/predict', payload, {
-        headers: { 'Content-Type': 'application/json' }
-      });
-
-      const data = response.data;
+      const data = await predictRisk(payload);
 
       setResult({
         prediction: data.prediction,
@@ -71,19 +68,16 @@ const RiskAnalyzer = () => {
         explanation: data.explanation || []
       });
     } catch (error) {
-      // Preserve the same fallback messaging as the original App.js logic.
       setResult({
         score: 0,
         level: 'ERROR',
-        explanation: ['Could not reach the Risk Engine. Verify FastAPI is running on port 8000.']
+        explanation: ['Could not reach the Risk Engine. Verify FastAPI is running on port 8001.']
       });
-      console.error('Analysis failed:', error);
     } finally {
       setLoading(false);
       setActiveStep(-1);
     }
   };
-
   const getRiskColor = () => {
     if (!result || result.level === 'ERROR') return '#233060';
     if (result.score > 70) return '#ff4d4d';
